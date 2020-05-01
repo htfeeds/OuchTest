@@ -1,17 +1,27 @@
-﻿namespace OuchTest.Core.Domain.TOEIC
+﻿namespace OuchTest.Core.Domain.Toeic
 {
-    public partial class TOEICQuestion : BaseEntity
+    public partial class ToeicQuestion : BaseEntity
     {
-        public int TopicId { get; set; }
-        public string Content { get; set; }
+        public int ToeicTopicId { get; set; }
+
+        public string Question { get; set; }
+
         public string Answer1 { get; set; }
+
         public string Answer2 { get; set; }
+
         public string Answer3 { get; set; }
+
         public string Answer4 { get; set; }
+
         public string Answer5 { get; set; }
+
         public string Answer6 { get; set; }
+
         public bool IsMultipleAnswer { get; set; }
-        public string CorrectAnswerNo { get; set; }
-        public virtual TOEICTopic Topic { get; set; }
+
+        public string CorrectAnswer { get; set; }
+
+        public virtual ToeicTopic ToeicTopic { get; set; }
     }
 }

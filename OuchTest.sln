@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1CDAA817-3522-45A3-AA87-D4500E8465A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchTest.Web", "Presentation\OuchTest.Web\OuchTest.Web.csproj", "{6C441528-4605-44BE-967B-D33B177ECDAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuchTest.Web", "Presentation\OuchTest.Web\OuchTest.Web.csproj", "{6C441528-4605-44BE-967B-D33B177ECDAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchTest.Core", "Libraries\OuchTest.Core\OuchTest.Core.csproj", "{CCDCA22F-B614-45D4-8B4C-6602DE8FA940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuchTest.Core", "Libraries\OuchTest.Core\OuchTest.Core.csproj", "{CCDCA22F-B614-45D4-8B4C-6602DE8FA940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchTest.Data", "Libraries\OuchTest.Data\OuchTest.Data.csproj", "{131D8444-86EB-4168-B553-314B5029796D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuchTest.Data", "Libraries\OuchTest.Data\OuchTest.Data.csproj", "{131D8444-86EB-4168-B553-314B5029796D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchTest.Services", "Libraries\OuchTest.Services\OuchTest.Services.csproj", "{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuchTest.Services", "Libraries\OuchTest.Services\OuchTest.Services.csproj", "{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
