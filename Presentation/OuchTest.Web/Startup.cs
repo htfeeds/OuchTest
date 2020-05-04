@@ -8,22 +8,33 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OuchTest.Web.Framework.Infrastructure.Extensions;
 
 namespace OuchTest.Web
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        #region Fields
+
+        private readonly IConfiguration _configuration;
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
+        #endregion
+
+        #region Ctor
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment hostingEnvironment)
         {
-            Configuration = configuration;
+            this._configuration = configuration;
+            this._hostingEnvironment = hostingEnvironment;
         }
 
-        public IConfiguration Configuration { get; }
+        #endregion
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.ConfigureApplicationServices(_configuration, _hostingEnvironment);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

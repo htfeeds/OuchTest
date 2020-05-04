@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\OuchTest.Core\OuchTest.Core.csproj" />
     <ProjectReference Include="..\..\Libraries\OuchTest.Services\OuchTest.Services.csproj" />
+    <ProjectReference Include="..\OuchTest.Web.Framework\OuchTest.Web.Framework.csproj" />
   </ItemGroup>
 
 </Project>

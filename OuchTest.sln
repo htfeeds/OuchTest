@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuchTest.Data", "Libraries\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OuchTest.Services", "Libraries\OuchTest.Services\OuchTest.Services.csproj", "{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchTest.Web.Framework", "Presentation\OuchTest.Web.Framework\OuchTest.Web.Framework.csproj", "{EAC112DA-7C91-4021-B67D-AB367A3FF3C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC112DA-7C91-4021-B67D-AB367A3FF3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC112DA-7C91-4021-B67D-AB367A3FF3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC112DA-7C91-4021-B67D-AB367A3FF3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC112DA-7C91-4021-B67D-AB367A3FF3C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{CCDCA22F-B614-45D4-8B4C-6602DE8FA940} = {5740B0DB-BBEF-4139-A9B7-02C0C24C1182}
 		{131D8444-86EB-4168-B553-314B5029796D} = {5740B0DB-BBEF-4139-A9B7-02C0C24C1182}
 		{C846D4CD-BD77-4FCB-B9E0-0D4C2B388582} = {5740B0DB-BBEF-4139-A9B7-02C0C24C1182}
+		{EAC112DA-7C91-4021-B67D-AB367A3FF3C3} = {1CDAA817-3522-45A3-AA87-D4500E8465A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {737D4A1D-CA13-4D25-8F01-919AACC5AC4A}
