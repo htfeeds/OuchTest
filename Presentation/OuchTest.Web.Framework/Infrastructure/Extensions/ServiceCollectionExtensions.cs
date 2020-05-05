@@ -41,6 +41,9 @@ namespace OuchTest.Web.Framework.Infrastructure.Extensions
             if (!DataSettingsManager.DatabaseIsInstalled)
                 return serviceProvider;
 
+            //log application start
+            engine.Resolve<ILogger>().Information("Application started");
+
             return serviceProvider;
         }
 

@@ -2,6 +2,7 @@
 using Autofac.Extensions.DependencyInjection;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OuchTest.Core.Configuration;
@@ -11,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace OuchTest.Core.Infrastructure
 {
@@ -64,19 +64,34 @@ namespace OuchTest.Core.Infrastructure
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Resolve dependency
+        /// </summary>
+        /// <typeparam name="T">Type of resolved service</typeparam>
+        /// <returns>Resolved service</returns>
         public T Resolve<T>() where T : class
         {
-            throw new NotImplementedException();
+            return (T)Resolve(typeof(T));
         }
 
+        /// <summary>
+        /// Resolve dependency
+        /// </summary>
+        /// <param name="type">Type of resolved service</param>
+        /// <returns>Resolved service</returns>
         public object Resolve(Type type)
         {
-            throw new NotImplementedException();
+            return GetServiceProvider().GetService(type);
         }
 
-        public IEnumerable<T> ResolveAll<T>()
+        /// <summary>
+        /// Resolve dependencies
+        /// </summary>
+        /// <typeparam name="T">Type of resolved services</typeparam>
+        /// <returns>Collection of resolved services</returns>
+        public virtual IEnumerable<T> ResolveAll<T>()
         {
-            throw new NotImplementedException();
+            return (IEnumerable<T>)GetServiceProvider().GetServices(typeof(T));
         }
 
         public object ResolveUnregistered(Type type)
@@ -87,6 +102,17 @@ namespace OuchTest.Core.Infrastructure
         #endregion
 
         #region Utilities
+
+        /// <summary>
+        /// Get IServiceProvider
+        /// </summary>
+        /// <returns>IServiceProvider</returns>
+        protected IServiceProvider GetServiceProvider()
+        {
+            var accessor = ServiceProvider.GetService<IHttpContextAccessor>();
+            var context = accessor.HttpContext;
+            return context?.RequestServices ?? ServiceProvider;
+        }
 
         /// <summary>
         /// Register and configure AutoMapper
@@ -165,6 +191,15 @@ namespace OuchTest.Core.Infrastructure
             assembly = tf.GetAssemblies().FirstOrDefault(a => a.FullName == args.Name);
             return assembly;
         }
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Service provider
+        /// </summary>
+        public virtual IServiceProvider ServiceProvider => _serviceProvider;
 
         #endregion
     }

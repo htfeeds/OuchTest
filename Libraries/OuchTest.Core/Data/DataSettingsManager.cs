@@ -1,4 +1,5 @@
-﻿using OuchTest.Core.Infrastructure;
+﻿using Newtonsoft.Json;
+using OuchTest.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,7 +25,27 @@ namespace OuchTest.Core.Data
         /// <returns>Data settings</returns>
         public static DataSettings LoadSettings(string filePath = null, bool reloadSettings = false, IOuchFileProvider fileProvider = null)
         {
-            return null;
+            if (!reloadSettings && Singleton<DataSettings>.Instance != null)
+                return Singleton<DataSettings>.Instance;
+
+            fileProvider = fileProvider ?? CommonHelper.DefaultFileProvider;
+            filePath = filePath ?? fileProvider.MapPath(OuchDataSettingsDefaults.FilePath);
+
+            //check whether file exists
+            if (!fileProvider.FileExists(filePath))
+            {
+                //if not
+                return new DataSettings();
+            }
+
+            var text = fileProvider.ReadAllText(filePath, Encoding.UTF8);
+            if (string.IsNullOrEmpty(text))
+                return new DataSettings();
+
+            //get data settings from the JSON file
+            Singleton<DataSettings>.Instance = JsonConvert.DeserializeObject<DataSettings>(text);
+
+            return Singleton<DataSettings>.Instance;
         }
 
         #endregion
