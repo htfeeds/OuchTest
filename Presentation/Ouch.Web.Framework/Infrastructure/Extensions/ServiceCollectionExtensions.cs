@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using OuchTest.Core.Configuration;
-using OuchTest.Core.Data;
-using OuchTest.Core.Infrastructure;
-using OuchTest.Core.Logging;
+using Ouch.Core.Configuration;
+using Ouch.Core.Data;
+using Ouch.Core.Infrastructure.Engine;
+using Ouch.Core.Logging;
 using System;
 using System.Net;
 
-namespace OuchTest.Web.Framework.Infrastructure.Extensions
+namespace Ouch.Web.Framework.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {

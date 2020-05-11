@@ -8,4 +8,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ouch.Web.Framework\Ouch.Web.Framework.csproj" />
+  </ItemGroup>
+
 </Project>
